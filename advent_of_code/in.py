@@ -12,6 +12,7 @@ def load(year:int, day:int) -> str:
     for d in download:
         if not d['url'].exists():
             download_file(**d)
+
     return path
 
 
