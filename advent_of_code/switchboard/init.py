@@ -15,9 +15,9 @@ def init(year, day):
     """Load the problem, identify sample input and sample output."""
     kwargs = {}
     if not year is None:
-        kwargs['year'] = year
+        kwargs['year'] = int(year)
     if not day is None:
-        kwargs['day'] = day
+        kwargs['day'] = int(day)
     start_day(**kwargs)
 
 

@@ -22,7 +22,10 @@ def load(year:Union[str, int], day:Union[str, int]) -> str:
     input_path = path / 'input.txt'
     if not (input_path).exists():
         with open(input_path, 'w') as f:
-            f.write(get_data(day=day, year=year))
+            data = get_data(day=day, year=year)
+            if len(data) == 0:
+                raise ValueError(f'No data for day {day} and year {year}')
+            f.write(data)
         print(f'downloaded {input_path}')
 
     return path
